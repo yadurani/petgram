@@ -1,7 +1,15 @@
-## curso-platzi-react-avanzado ⚛️
+# Petgram 😺🐶🐹🐰
 
-**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev
+Tu app de fotos de mascotas!!! 
 
-**¡Sígueme en Twitch para streams sobre desarrollo web!** 👉 https://www.twitch.tv/midudev
+## Demo 🚀
 
-Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
+[View Demo](https://petgram-yadu-yadurani.vercel.app/)
+
+## Project 💻
+
+Solution for a project from [Platzi.com](platzi.com) the course advanced react.
+
+## Overview 🔖
+
+![Img overview project]()
