@@ -8,7 +8,7 @@ Tu app de fotos de mascotas!!!
 
 ## Project 💻
 
-Solution for a project from [Platzi.com](platzi.com) the course advanced react.
+Solution for a project from [Platzi.com](www.platzi.com) the course advanced react.
 
 ## Overview 🔖
 
