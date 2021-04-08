@@ -7,6 +7,7 @@ import NotFound from '../pages/NotFound'
 import NotRegisteredUser from '../pages/NotRegisteredUser'
 // import Favs from '../pages/Favs'
 import User from '../pages/User'
+import Register from '../pages/Register'
 
 const Favs = React.lazy(() => import('../pages/Favs'))
 
@@ -19,6 +20,7 @@ const Routes = () => {
         <Home path='/' />
         <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
+        <Register path='/register'/>
         {!isAuth && <NotRegisteredUser path='/login' />}
         {!isAuth && <Redirect noThrow from='/favs' to='/login' />}
         {!isAuth && <Redirect noThrow from='/user' to='/login' />}

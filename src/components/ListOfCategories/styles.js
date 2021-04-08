@@ -2,10 +2,11 @@ import styled, { css } from 'styled-components'
 import { bounceDown } from '../../styles/animation'
 
 export const List = styled.ul`
-  margin: 0;
-  padding: 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
   display: flex;
+  margin: 0;
   overflow: auto;
+  padding: 15px 4px;
   width: 100%;
   ${props => props.fixed && css`
     ${bounceDown()}
@@ -25,6 +26,6 @@ export const List = styled.ul`
 `
 
 export const Item = styled.li`
-  padding: 0 8px;
+  padding: 0 10px;
   list-style: none;
 `

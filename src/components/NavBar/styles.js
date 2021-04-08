@@ -4,11 +4,10 @@ import { fadeIn } from '../../styles/animation'
 
 export const Nav = styled.nav`
   align-items: center;
-  background-color: #fcfcfc;
-  border-top: 1px solid #e0e0e0; 
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-top: 1px solid  ${({ theme }) => theme.colors.light}; 
   bottom: 0;
   display: flex;
-  height:50px;
   justify-content: space-around;
   left: 0;
   margin: 0 auto;
@@ -17,25 +16,27 @@ export const Nav = styled.nav`
   right: 0;
   width: 100%;
   z-index: 1000;
+  height: 44px;
 `
 
 export const Link = styled(LinkRouter)`
   align-items: center;
-  color: #888;
+  color: white;
   display: inline-flex;
   justify-content: center;
   text-decoration: none;
   width: 100%;
   height: 100%;
+  svg:last-child {
+    display: none;
+  }
   &[aria-current] {
-    color: #1f1f1f;
-    &:after {
-      ${fadeIn({ time: '0.5s' })};
-      content: '·';
-      position: absolute;
-      bottom: 0;
-      font-size: 34px;
-      line-height: 20px;
+    color: white;
+    svg:first-child {
+      display: none;
+    }
+    svg:last-child {
+      display: block;
     }
   }
 `

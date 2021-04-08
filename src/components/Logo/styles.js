@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Svg = styled.svg`
-  width: 220px;
-  margin-left: -10px;
-  margin-top: -30px;
+  height: ${(props) => props.height ? `${props.height}px` : '45px'};
+  margin-top: -5px;
+`
+export const SvgWrapper = styled.div`
 `

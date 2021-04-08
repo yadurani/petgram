@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import useInputValue from '../../hooks/useInputValue'
-import { Form, Input, Title, Error } from './styles'
+import { Form, Input, Error, FormWrapper } from './styles'
 import SubmitButton from '../SubmitButton'
+import Logo from '../Logo'
+import { Link } from '@reach/router'
 
-const UserForm = ({ onSubmit, title, error, disabled }) => {
+const UserForm = ({ onSubmit, title, error, disabled, login }) => {
   const { values, onChange } = useInputValue()
   const { email, password } = values
 
@@ -14,8 +16,8 @@ const UserForm = ({ onSubmit, title, error, disabled }) => {
   }
 
   return (
-    <>
-      <Title>{title}</Title>
+    <FormWrapper>
+      <Logo height={100}/>
       <Form disabled={disabled} onSubmit={handleSubmit}>
         <Input
           disabled={disabled}
@@ -38,7 +40,10 @@ const UserForm = ({ onSubmit, title, error, disabled }) => {
         <SubmitButton disabled={disabled}>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}
-    </>
+      {login &&
+        <Link to="/register">Registrate</Link>
+      }
+    </FormWrapper>
   )
 }
 
