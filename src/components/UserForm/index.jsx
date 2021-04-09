@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import useInputValue from '../../hooks/useInputValue'
-import { Form, Input, Error, FormWrapper } from './styles'
+import { Form, Input, Error, FormWrapper, P } from './styles'
 import SubmitButton from '../SubmitButton'
 import Logo from '../Logo'
 import { Link } from '@reach/router'
 
-const UserForm = ({ onSubmit, title, error, disabled, login }) => {
+const UserForm = ({ onSubmit, title, error, disabled, login, register }) => {
   const { values, onChange } = useInputValue()
   const { email, password } = values
+  const disabledBtn = !email || !password
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +18,7 @@ const UserForm = ({ onSubmit, title, error, disabled, login }) => {
 
   return (
     <FormWrapper>
-      <Logo height={100}/>
+      <Logo height={100} path=""/>
       <Form disabled={disabled} onSubmit={handleSubmit}>
         <Input
           disabled={disabled}
@@ -37,11 +38,14 @@ const UserForm = ({ onSubmit, title, error, disabled, login }) => {
           type='password'
           autoComplete='current-password'
         />
-        <SubmitButton disabled={disabled}>{title}</SubmitButton>
+        <SubmitButton disabled={disabled || disabledBtn}>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}
       {login &&
-        <Link to="/register">Registrate</Link>
+        <P>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></P>
+      }
+      {register &&
+        <P>Ya tengo una cuenta. <Link to="/login">Iniciar sesión</Link></P>
       }
     </FormWrapper>
   )
@@ -51,7 +55,9 @@ UserForm.propTypes = {
   onSubmit: PropTypes.func,
   title: PropTypes.string,
   error: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  login: PropTypes.bool,
+  register: PropTypes.bool
 }
 
 export default UserForm

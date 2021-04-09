@@ -36,4 +36,17 @@ export const FormWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  @media(min-width: 960px) {
+    margin: 20px 0;
+    min-height: calc(100vh - 90px);
+    border: 1px solid  ${({ theme }) => theme.colors.light}; 
+  }
+`
+export const P = styled.p`
+  color: white;
+  font-size: 14px;
+  a {
+    color: #285AEB;
+    text-decoration: none;
+  }
 `

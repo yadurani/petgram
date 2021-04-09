@@ -10,6 +10,8 @@ export const Link = styled(LinkRouter)`
 `
 
 export const Image = styled.img`
+  z-index: 1;
+  position: relative;
   object-fit: cover;
   height: 56px;
   width: 56px;
@@ -19,6 +21,7 @@ export const Image = styled.img`
 `
 
 export const ImageWrapper = styled.div`
+  margin-bottom: 5px;
   height: 56px;
   width: 56px;
   border-radius: 50%;
@@ -32,7 +35,6 @@ export const ImageWrapper = styled.div`
     right: -2px;
     background: linear-gradient(224deg, #b500b5, #ffbc00);
     content: '';
-    z-index: -1;
     border-radius: 50%;
   }
 `

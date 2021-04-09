@@ -1,3 +1,4 @@
+import { navigate } from '@reach/router'
 import React from 'react'
 import UserForm from '../components/UserForm'
 import { useStateValue } from '../context/AppContext'
@@ -16,6 +17,7 @@ const Register = () => {
       const { data } = await register({ variables })
       const { signup } = data
       activateAuth(signup)
+      navigate('/')
     } catch (err) {}
   }
 
@@ -25,6 +27,7 @@ const Register = () => {
       onSubmit={onSubmitRegister}
       error={errorMsg}
       disabled={loading}
+      register
     />
   )
 }

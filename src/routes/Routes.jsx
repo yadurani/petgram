@@ -5,7 +5,6 @@ import Detail from '../pages/Detail'
 import { useStateValue } from '../context/AppContext'
 import NotFound from '../pages/NotFound'
 import NotRegisteredUser from '../pages/NotRegisteredUser'
-// import Favs from '../pages/Favs'
 import User from '../pages/User'
 import Register from '../pages/Register'
 

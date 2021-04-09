@@ -7,7 +7,7 @@ const FavButton = ({ liked, likes, onClick }) => {
   const Icon = liked ? MdFavorite : MdFavoriteBorder
 
   return (
-    <Button onClick={onClick}>
+    <Button onClick={onClick} active={liked}>
       <Icon size='24px' /> <b>{likes}</b>&nbsp;likes
     </Button>
   )

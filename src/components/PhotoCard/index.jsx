@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 
 import { Img, ImgWrapper, Article } from './styles'
 import useNearScreen from '../../hooks/useNearScreen'
@@ -12,7 +12,14 @@ const DEFAULT_IMAGE =
 const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE, liked }) => {
   const [show, element] = useNearScreen()
   const { toogleLikePhoto } = useMutationToogleLike(id)
-  const handleFavClick = () => toogleLikePhoto()
+
+  const handleFavClick = () => {
+    toogleLikePhoto()
+      .then(() => {})
+      .catch(() => {
+        navigate('/login')
+      })
+  }
 
   return (
     <Article ref={element}>
@@ -42,7 +49,7 @@ PhotoCard.propTypes = {
     }
   },
   src: PropTypes.string,
-  liked: PropTypes.bool.isRequired
+  liked: PropTypes.bool
 }
 
 export default PhotoCard

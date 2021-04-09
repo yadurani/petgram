@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Button = styled.button`
   align-items: center;
@@ -7,7 +7,13 @@ export const Button = styled.button`
   font-size: 16px;
   padding-left: 12px;
   padding-top: 15px;
+  cursor: pointer;
   & svg {
     margin-right: 10px
   }
+  ${({active}) => active && css`
+    & svg {
+      color: ${({theme}) => theme.colors.active};
+    }
+  `}
 `

@@ -1,12 +1,13 @@
 import React from 'react'
 import Logo from '../../Logo'
-import { HeaderWrapper, HeaderContainer } from './styles'
+import { HeaderWrapper, HeaderContainer, Title } from './styles'
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Logo/>
+        {!title && <Logo/>}
+        {title && <Title>{title}</Title>}
       </HeaderContainer>
     </HeaderWrapper>
   )

@@ -1,22 +1,25 @@
 import React from 'react'
-import PhotoCard from '../PhotoCard'
 import useGetFavorites from '../../hooks/useGetFavorites'
 import { useStateValue } from '../../context/AppContext'
+import { FavImg, FavItem, NotFav, WrapperFavs } from './styles'
 
 const ListOfFavs = () => {
   const { loading, error, data } = useGetFavorites()
   const { removeAuth } = useStateValue()
-
+  const noData = data?.favs.length === 0
+  
   if (loading) return <p>Cargando...</p>
   if (error) removeAuth()
+  if(noData) return <NotFav><span>💔😔</span>No tienes favoritos!!</NotFav>
+
   return (
-    <ul>
+    <WrapperFavs>
       {data?.favs?.map(photo => (
-        <li key={photo.id}>
-          <PhotoCard {...photo} />
-        </li>
+        <FavItem key={photo.id}>
+          <FavImg src={photo.src} alt={photo.src} />
+        </FavItem>
       ))}
-    </ul>
+    </WrapperFavs>
   )
 }
 

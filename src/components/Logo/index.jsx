@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from '@reach/router'
 import { Svg, SvgWrapper } from './styles'
 
-const Logo = (props) => {
+const Logo = ({path = '/', ...props}) => {
   return (
     <SvgWrapper>
-      <Link to='/'>
+      <Link to={path}>
         <Svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="25.056 11.11 449.888 127.78"

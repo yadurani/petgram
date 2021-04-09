@@ -12,6 +12,7 @@ const NotRegisteredUser = () => {
   const onSubmitLogin = async ({ email, password }) => {
     const input = { email, password }
     const variables = { input }
+    
     try {
       const { data } = await login({ variables })
       activateAuth(data.login)
@@ -24,6 +25,7 @@ const NotRegisteredUser = () => {
       onSubmit={onSubmitLogin}
       error={errorMsgLogin}
       disabled={loadingSignIn}
+      login
     />
   )
 }

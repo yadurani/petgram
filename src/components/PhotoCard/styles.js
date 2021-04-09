@@ -25,5 +25,9 @@ export const Img = styled.img`
 export const Article = styled.article`
   min-height: 200px;
   padding-bottom: 15px;
-  background: ${({ theme }) => theme.colors.primary}
+  background: ${({ theme }) => theme.colors.primary};
+  @media(min-width: 960px) {
+    border: 1px solid  ${({ theme }) => theme.colors.light};
+    margin: 20px 0;
+  }
 `

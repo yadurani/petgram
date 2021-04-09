@@ -7,6 +7,7 @@ export const Button = styled.button`
   height: 32px;
   width: 100%;
   text-align: center;
+  cursor: pointer;
   &[disabled] {
     opacity: .3;
   }

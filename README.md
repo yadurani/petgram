@@ -12,4 +12,4 @@ Solution for a project from [Platzi.com](https://www.platzi.com) the course adva
 
 ## Overview 🔖
 
-![Img overview project]()
+![Img overview project](public/cover.jpg)

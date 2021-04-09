@@ -1,14 +1,12 @@
 import React from 'react'
-import SubmitButton from '../components/SubmitButton'
-import { useStateValue } from '../context/AppContext'
+import Layout from '../components/Layout'
+import UserProfile from '../components/UserProfile'
 
 const User = () => {
-  const { removeAuth } = useStateValue()
   return (
-    <div>
-      user
-      <SubmitButton onClick={removeAuth}>Cerrar sesión</SubmitButton>
-    </div>
+    <Layout title='Tu perfil'>
+      <UserProfile />
+    </Layout>
   )
 }
 

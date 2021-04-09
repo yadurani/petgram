@@ -8,18 +8,26 @@ export const List = styled.ul`
   overflow: auto;
   padding: 15px 4px;
   width: 100%;
+  background: ${({ theme }) => theme.colors.primary};
+  @media(min-width: 990px) {
+    border: 1px solid  ${({ theme }) => theme.colors.light};
+    margin: 20px 0;
+  }
+  @media(max-width: 960px) {
+    background: ${({ theme }) => theme.colors.secondary};
+  }
   ${props => props.fixed && css`
-    ${bounceDown()}
+    display: none;
     background: white;
     border-radius: 60px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     left: 0;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 500px;
     padding: 5px;
     position: fixed;
     right: 0;
-    top: -20px;
+    top: 18px;
     transform: scale(.5);
     z-index: 1;
   `}

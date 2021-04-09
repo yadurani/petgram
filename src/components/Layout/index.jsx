@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Div, Subtitle, Title } from './styles'
 import Header from '../Common/Header'
-import NavBar from '../NavBar'
 
 const Layout = ({ children, title, subtitle, seo }) => {
   return (
@@ -14,10 +13,8 @@ const Layout = ({ children, title, subtitle, seo }) => {
           {subtitle && <meta name='description' content={subtitle} />}
         </Helmet>
       }
-      <Header/>
+      <Header title={title}/>
       <Div>
-        {title && <Title>{title}</Title>}
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
         {children}
       </Div>
     </>
